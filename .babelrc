@@ -1,0 +1,16 @@
+{
+  "presets": ["babel-preset-expo"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@screens": ["./src/screens"],
+          "@types": ["./src/types"],
+          "@styles": ["./src/styles"]
+        },
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ]
+  ]
+}

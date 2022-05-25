@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
+
 import { Style, Title } from './styles'
 
 const Feed = () => {
