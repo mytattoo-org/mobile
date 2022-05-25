@@ -17,11 +17,21 @@ const Style = styled.SafeAreaView`
 
 const HeartButton = styled.TouchableOpacity``
 
-const BalloonButton = styled.View``
+const BalloonButton = styled.TouchableOpacity`
+  margin-left: 16px;
+`
 
-const TattooStylesButton = styled.View``
+const TattooStylesButton = styled.TouchableOpacity`
+  margin-left: auto;
+`
 
-const Footer = styled.View``
+const Footer = styled.View`
+  display: flex;
+  flex-direction: row;
+
+  padding: 0 8px;
+  margin-top: 16px;
+`
 
 const Title = styled.Text`
   font-size: ${RFValue(24)}px;

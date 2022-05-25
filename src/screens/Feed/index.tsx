@@ -14,13 +14,15 @@ import {
   TattooStylesButton
 } from './styles'
 
+import Balloon from '@components/atoms/icons/Balloon'
 import Heart from '@components/atoms/icons/Heart'
+import Tattoo from '@components/atoms/icons/Tattoo'
 
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 
 const Feed = () => {
-  const { formattedPosts } = usePosts()
+  const { formattedPosts, theme } = usePosts()
 
   return (
     <Style>
@@ -47,12 +49,16 @@ const Feed = () => {
 
             <Footer>
               <HeartButton>
-                <Heart />
+                <Heart color={theme.colors.secondary} />
               </HeartButton>
 
-              <BalloonButton />
+              <BalloonButton>
+                <Balloon color={theme.colors.secondary} />
+              </BalloonButton>
 
-              <TattooStylesButton />
+              <TattooStylesButton>
+                <Tattoo color={theme.colors.secondary} />
+              </TattooStylesButton>
             </Footer>
           </Post>
         )}
