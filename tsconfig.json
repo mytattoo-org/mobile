@@ -1,5 +1,6 @@
 {
   "extends": "expo/tsconfig.base",
+  "types": ["styled-components-react-native"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
@@ -20,7 +21,7 @@
       "@tests/*": ["./src/tests/*"],
       "@types/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"],
-      "@assets/*": ["./src/assets/*"],
+      "@assets/*": ["./assets/*"],
       "@styles/*": ["./src/styles/*"],
       "@screens/*": ["./src/screens/*"],
       "@components/*": ["./src/components/*"],
