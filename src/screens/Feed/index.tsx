@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar'
-
 import { Style, Title } from './styles'
+
+import { StatusBar } from 'expo-status-bar'
 
 const Feed = () => {
   return (
     <Style>
-      <Title>MyTattoo</Title>
-
       <StatusBar style='light' />
+
+      <Title>MyTattoo</Title>
     </Style>
   )
 }

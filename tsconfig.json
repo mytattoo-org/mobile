@@ -15,9 +15,16 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "@screens/*": ["src/screens/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@tests/*": ["./src/tests/*"],
       "@types/*": ["./src/types/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@components/*": ["./src/components/*"],
+      "@common/*": ["./submodules/common/src/*"]
     }
   },
   "exclude": ["node_modules"]
