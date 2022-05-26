@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { usePosts } from './logic'
 import {
   Avatar,
@@ -18,16 +20,11 @@ import Balloon from '@components/atoms/icons/Balloon'
 import Heart from '@components/atoms/icons/Heart'
 import Tattoo from '@components/atoms/icons/Tattoo'
 
-import { StatusBar } from 'expo-status-bar'
-import React from 'react'
-
 const Feed = () => {
   const { formattedPosts, theme } = usePosts()
 
   return (
     <Style>
-      <StatusBar style='light' />
-
       <Posts
         data={formattedPosts}
         keyExtractor={({ id }) => id}

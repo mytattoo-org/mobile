@@ -9,8 +9,9 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
+  "importOrderSortSpecifiers": false,
   "importOrder": [
+    "<THIRD_PARTY_MODULES>",
     "^./types$|^./styles|^./logic$",
     "^./|^../",
     "^@components/atoms",
@@ -27,7 +28,6 @@
     "^@utils",
     "^@routes",
     "^@assets",
-    "^@common",
-    "<THIRD_PARTY_MODULES>"
+    "^@common"
   ]
 }

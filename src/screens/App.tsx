@@ -1,12 +1,16 @@
+import { registerRootComponent } from 'expo'
+import { StatusBar } from 'expo-status-bar'
+import 'react-native-gesture-handler'
+
 import GlobalProvider from '@components/providers/GlobalProvider'
 
-import { FeedTab } from '@routes/FeedTab'
-
-import { registerRootComponent } from 'expo'
+import AuthStack from '@routes/AuthStack'
 
 const App = () => (
   <GlobalProvider>
-    <FeedTab />
+    <AuthStack />
+
+    <StatusBar style='light' />
   </GlobalProvider>
 )
 
