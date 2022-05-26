@@ -20,15 +20,16 @@ const fakePosts = [
     id: '2',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor, eos possimus sint, quam aliquam veniam obcaecati, eius libero numquam perspiciatis dolorem! Sed, adipisci odio minima odit dolorum libero vero.',
-    author: { name: 'Vitor Daniel', isArtist: true, avatar: avatar },
+    author: { name: 'Vitor Daniel', isArtist: true, avatar: avatar2 },
+    image: tattoo
+  },
+  {
+    id: '1',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor, eos possimus sint, quam aliquam veniam obcaecati, eius libero numquam perspiciatis dolorem! Sed, adipisci odio minima odit dolorum libero vero.',
+    author: { name: 'Miguel Andrade', isArtist: false, avatar: avatar },
     image: tattoo
   }
-  // {
-  //   id: '1',
-  //   description:
-  //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit dolor, eos possimus sint, quam aliquam veniam obcaecati, eius libero numquam perspiciatis dolorem! Sed, adipisci odio minima odit dolorum libero vero.',
-  //   author: { name: 'Miguel Andrade', isArtist: false, avatar: avatar2 }
-  // }
 ]
 
 const usePosts = () => {

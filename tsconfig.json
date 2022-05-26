@@ -21,6 +21,7 @@
       "@tests/*": ["./src/tests/*"],
       "@types/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"],
+      "@routes/*": ["./src/routes/*"],
       "@assets/*": ["./assets/*"],
       "@styles/*": ["./src/styles/*"],
       "@screens/*": ["./src/screens/*"],

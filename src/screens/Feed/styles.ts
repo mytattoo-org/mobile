@@ -72,6 +72,7 @@ const Header = styled.View`
 `
 
 const Post = styled.View`
+  margin: 8px 0;
   width: 100%;
 `
 
@@ -85,17 +86,17 @@ const PostImage = styled.Image`
 `
 
 export {
-  Footer,
-  HeartButton,
-  BalloonButton,
-  TattooStylesButton,
+  Name,
+  Post,
   Style,
   Title,
-  Post,
+  Posts,
   Header,
   Avatar,
-  Name,
-  Posts,
+  Footer,
+  PostImage,
+  HeartButton,
   Description,
-  PostImage
+  BalloonButton,
+  TattooStylesButton
 }

@@ -1,14 +1,13 @@
-import Feed from '@screens/Feed'
+import GlobalProvider from '@components/providers/GlobalProvider'
 
-import theme from '@styles/theme'
+import { FeedTab } from '@routes/FeedTab'
 
 import { registerRootComponent } from 'expo'
-import { ThemeProvider } from 'styled-components'
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <Feed />
-  </ThemeProvider>
+  <GlobalProvider>
+    <FeedTab />
+  </GlobalProvider>
 )
 
 export default registerRootComponent(App)

@@ -25,6 +25,7 @@
     "^@tests",
     "^@types",
     "^@utils",
+    "^@routes",
     "^@assets",
     "^@common",
     "<THIRD_PARTY_MODULES>"
