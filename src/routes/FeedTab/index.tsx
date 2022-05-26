@@ -1,10 +1,10 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import React from 'react'
+
 import { useFeedTab } from './logic'
 
 import Feed from '@screens/Feed'
 import Filters from '@screens/Filters'
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import React from 'react'
 
 const Tab = createBottomTabNavigator()
 
