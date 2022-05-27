@@ -1,9 +1,9 @@
 import { ComponentType } from 'react'
-import { ControllerProps } from 'react-hook-form'
-import { TextInputProps } from 'react-native'
 import { DefaultTheme } from 'styled-components/native'
 
 import { IIconProps } from '@components/atoms/icons/types'
+
+import { IInputProps } from '@components/molecules/Input/types'
 
 interface IInputState {
   isFilled: boolean
@@ -19,19 +19,9 @@ interface ITextInputStyleProps {
   color: string
 }
 
-interface IInputProps {
-  error?: string
-  label?: string
-  inputProps: TextInputProps
-  controllerProps: Omit<ControllerProps, 'render'>
-  iconProps?: {
-    props: IIconProps
-    component?: ComponentType<IIconProps>
-  }
-}
-
 interface IUseInputParams {
-  iconProps: IInputProps['iconProps']
+  icon: IFieldProps['icon']
+  inputProps: IFieldProps['inputProps']
 }
 
 interface ILabelTextProps {
@@ -48,9 +38,19 @@ type TGetColors = (
   iconColor: string
 }
 
+interface IFieldProps {
+  error?: string
+  label?: string
+  inputProps: IInputProps
+  icon?: {
+    props: IIconProps
+    component?: ComponentType<IIconProps>
+  }
+}
+
 export type {
   TGetColors,
-  IInputProps,
+  IFieldProps,
   IInputState,
   IUseInputParams,
   ILabelTextProps,

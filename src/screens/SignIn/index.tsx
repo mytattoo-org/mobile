@@ -7,7 +7,7 @@ import User from '@components/atoms/icons/User'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
 
-import Input from '@components/organisms/Input'
+import Field from '@components/organisms/Field'
 
 const SignIn = () => {
   const { control, errors, onSubmit } = useSignIn()
@@ -16,14 +16,16 @@ const SignIn = () => {
     <WithKeyboard>
       <SignInStyle>
         <Form>
-          <Input
+          <Field
             label='Nome de usuário ou e-mail'
             error={errors.usernameOrEmail?.message}
-            controllerProps={{ control, name: 'usernameOrEmail' }}
-            iconProps={{ component: User, props: { height: 24 } }}
+            icon={{ component: User, props: { height: 24 } }}
             inputProps={{
-              autoCapitalize: 'none',
-              keyboardType: 'email-address'
+              controllerProps: { control, name: 'usernameOrEmail' },
+              textInputProps: {
+                autoCapitalize: 'none',
+                keyboardType: 'email-address'
+              }
             }}
           />
 

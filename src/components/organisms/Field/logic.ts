@@ -3,7 +3,9 @@ import { useTheme } from 'styled-components'
 
 import type { IInputState, IUseInputParams, TGetColors } from './types'
 
-const useInput = ({ iconProps }: IUseInputParams) => {
+import { IInputProps } from '@components/molecules/Input/types'
+
+const useInput = ({ icon, inputProps }: IUseInputParams) => {
   const theme = useTheme()
   const [inputState, setInputState] = useState<IInputState>({
     isFilled: false,
@@ -15,14 +17,16 @@ const useInput = ({ iconProps }: IUseInputParams) => {
     inputState
   )
 
-  const Icon = iconProps?.component
+  const Icon = icon?.component
 
-  const onTextInputFocus = () => {
+  const onTextInputFocus: IInputProps['onTextInputFocus'] = event => {
     setInputState(prev => ({ ...prev, isFocused: true }))
+    inputProps?.onTextInputFocus && inputProps.onTextInputFocus(event)
   }
 
-  const onTextInputBlur = () => {
+  const onTextInputBlur: IInputProps['onTextInputBlur'] = event => {
     setInputState(prev => ({ ...prev, isFocused: false }))
+    inputProps?.onTextInputFocus && inputProps.onTextInputFocus(event)
   }
 
   return {
