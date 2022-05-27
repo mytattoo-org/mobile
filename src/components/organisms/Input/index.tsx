@@ -4,25 +4,23 @@ import { useInput } from './logic'
 import { InputStyle, TextInput } from './styles'
 import type { IInputProps } from './types'
 
-import Heart from '@components/atoms/icons/Heart'
-
 import Error from '@components/molecules/Error'
 
-const Input = ({ controllerProps, inputProps, error }: IInputProps) => {
-  const {
-    iconColor,
-    textColor,
-    inputState,
-    onTextInputBlur,
-    onTextInputFocus
-  } = useInput()
+const Input = ({
+  error,
+  iconProps,
+  inputProps,
+  controllerProps
+}: IInputProps) => {
+  const { textColor, inputState, onTextInputBlur, onTextInputFocus, Icon } =
+    useInput({ iconProps })
 
   return (
     <>
       {error && <Error message={error} />}
 
       <InputStyle inputState={inputState} error={error}>
-        <Heart color={iconColor} />
+        {Icon}
 
         <Controller
           name={controllerProps.name}

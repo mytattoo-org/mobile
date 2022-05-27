@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useTheme } from 'styled-components'
 
-import { IInputState } from './types'
+import type { IInputState, IUseInputParams } from './types'
 
-const useInput = () => {
+const useInput = ({ iconProps }: IUseInputParams) => {
   const theme = useTheme()
   const [inputState, setInputState] = useState<IInputState>({
     isFilled: false,
@@ -19,6 +19,14 @@ const useInput = () => {
     ? theme.colors.primary
     : theme.colors.secondary
 
+  const IconComponent = iconProps?.component
+
+  const Icon = IconComponent ? (
+    <IconComponent color={iconColor} {...iconProps.props} />
+  ) : (
+    <></>
+  )
+
   const onTextInputFocus = () => {
     setInputState(prev => ({ ...prev, isFocused: true }))
   }
@@ -27,7 +35,13 @@ const useInput = () => {
     setInputState(prev => ({ ...prev, isFocused: false }))
   }
 
-  return { inputState, iconColor, textColor, onTextInputBlur, onTextInputFocus }
+  return {
+    Icon,
+    textColor,
+    inputState,
+    onTextInputBlur,
+    onTextInputFocus
+  }
 }
 
 export { useInput }

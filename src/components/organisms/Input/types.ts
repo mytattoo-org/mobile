@@ -1,5 +1,8 @@
+import { ComponentType } from 'react'
 import { ControllerProps } from 'react-hook-form'
 import { TextInputProps } from 'react-native'
+
+import { IIconProps } from '@components/atoms/icons/types'
 
 interface IInputState {
   isFilled: boolean
@@ -19,6 +22,20 @@ interface IInputProps {
   error?: string
   inputProps: TextInputProps
   controllerProps: Omit<ControllerProps, 'render'>
+  iconProps?: {
+    props: IIconProps
+    component?: ComponentType<IIconProps>
+  }
 }
 
-export type { IInputProps, IInputStyleProps, IInputState, ITextInputStyleProps }
+interface IUseInputParams {
+  iconProps: IInputProps['iconProps']
+}
+
+export type {
+  IInputProps,
+  IInputState,
+  IUseInputParams,
+  IInputStyleProps,
+  ITextInputStyleProps
+}
