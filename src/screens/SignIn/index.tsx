@@ -17,13 +17,13 @@ const SignIn = () => {
       <SignInStyle>
         <Form>
           <Input
+            label='Nome de usuário ou e-mail'
             error={errors.usernameOrEmail?.message}
             controllerProps={{ control, name: 'usernameOrEmail' }}
             iconProps={{ component: User, props: { height: 24 } }}
             inputProps={{
               autoCapitalize: 'none',
-              keyboardType: 'email-address',
-              placeholder: 'Nome de usuário'
+              keyboardType: 'email-address'
             }}
           />
 

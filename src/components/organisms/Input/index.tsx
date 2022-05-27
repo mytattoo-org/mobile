@@ -1,26 +1,41 @@
+import React from 'react'
 import { Controller } from 'react-hook-form'
 
 import { useInput } from './logic'
-import { InputStyle, TextInput } from './styles'
+import { InputStyle, LabelText, TextInput, Label } from './styles'
 import type { IInputProps } from './types'
 
 import Error from '@components/molecules/Error'
 
 const Input = ({
   error,
+  label,
   iconProps,
   inputProps,
   controllerProps
 }: IInputProps) => {
-  const { textColor, inputState, onTextInputBlur, onTextInputFocus, Icon } =
-    useInput({ iconProps })
+  const {
+    Icon,
+    textColor,
+    iconColor,
+    labelColor,
+    borderColor,
+    onTextInputBlur,
+    onTextInputFocus
+  } = useInput({ iconProps })
 
   return (
     <>
       {error && <Error message={error} />}
 
-      <InputStyle inputState={inputState} error={error}>
-        {Icon}
+      <InputStyle borderColor={borderColor} error={error}>
+        {Icon && <Icon color={iconColor} {...iconProps?.props} />}
+
+        {label && (
+          <Label>
+            <LabelText color={labelColor}>{label}</LabelText>
+          </Label>
+        )}
 
         <Controller
           name={controllerProps.name}
