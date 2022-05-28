@@ -1,5 +1,7 @@
 import styled from 'styled-components/native'
 
+import Field from '@components/organisms/Field'
+
 const Form = styled.View`
   width: 80%;
 `
@@ -12,4 +14,10 @@ const SignInStyle = styled.View`
   width: 100%;
 `
 
-export { SignInStyle, Form }
+const UsernameOrEmail = styled(Field)``
+
+const Password = styled(Field)`
+  margin-top: 16px;
+`
+
+export { SignInStyle, Form, UsernameOrEmail, Password }

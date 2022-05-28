@@ -1,13 +1,20 @@
 import React from 'react'
 
 import { useInput } from './logic'
-import { FieldStyle, LabelText, Label } from './styles'
+import { FieldStyle, LabelText, Label, FieldSet } from './styles'
 import type { IFieldProps } from './types'
 
 import Error from '@components/molecules/Error'
 import Input from '@components/molecules/Input'
 
-const Field = ({ error, label, icon, inputProps }: IFieldProps) => {
+const Field = ({
+  icon,
+  label,
+  style,
+  error,
+  getValues,
+  inputProps
+}: IFieldProps) => {
   const {
     Icon,
     textColor,
@@ -16,13 +23,13 @@ const Field = ({ error, label, icon, inputProps }: IFieldProps) => {
     borderColor,
     onTextInputBlur,
     onTextInputFocus
-  } = useInput({ icon, inputProps })
+  } = useInput({ icon, inputProps, error: !!error })
 
   return (
-    <>
+    <FieldStyle style={style}>
       {error && <Error message={error} />}
 
-      <FieldStyle borderColor={borderColor} error={error}>
+      <FieldSet borderColor={borderColor} error={error}>
         {Icon && <Icon color={iconColor} {...icon?.props} />}
 
         {label && (
@@ -32,7 +39,7 @@ const Field = ({ error, label, icon, inputProps }: IFieldProps) => {
         )}
 
         <Input
-          onTextInputBlur={onTextInputBlur}
+          onTextInputBlur={e => onTextInputBlur(e, getValues)}
           onTextInputFocus={onTextInputFocus}
           controllerProps={inputProps.controllerProps}
           textInputProps={{
@@ -40,8 +47,8 @@ const Field = ({ error, label, icon, inputProps }: IFieldProps) => {
             ...inputProps?.textInputProps
           }}
         />
-      </FieldStyle>
-    </>
+      </FieldSet>
+    </FieldStyle>
   )
 }
 

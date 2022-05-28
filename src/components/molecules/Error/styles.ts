@@ -4,6 +4,9 @@ import styled from 'styled-components/native'
 import type { IErrorStyleProps } from './types'
 
 const ErrorStyle = styled.View<IErrorStyleProps>`
+  position: relative;
+  z-index: 1;
+
   flex-direction: row;
   align-items: center;
   justify-content: center;

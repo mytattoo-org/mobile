@@ -14,8 +14,8 @@ const Input = ({
       render={({ field: { onBlur, onChange, value } }) => (
         <TextInput
           value={value}
-          onChangeText={onChange}
           onFocus={onTextInputFocus}
+          onChangeText={value => onChange(value)}
           onBlur={event => {
             onBlur()
             onTextInputBlur && onTextInputBlur(event)

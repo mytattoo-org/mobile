@@ -13,7 +13,6 @@ const Label = styled.View`
   position: absolute;
   top: -16px;
   left: 0;
-  z-index: -1;
 
   padding: 4px 8px;
   margin-left: 16px;
@@ -21,7 +20,7 @@ const Label = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
 `
 
-const FieldStyle = styled.View<IInputStyleProps>`
+const FieldSet = styled.View<IInputStyleProps>`
   position: relative;
 
   align-items: center;
@@ -37,8 +36,10 @@ const FieldStyle = styled.View<IInputStyleProps>`
   ${({ error }) =>
     error &&
     css`
-      margin-top: 8px;
+      margin-top: 16px;
     `};
 `
 
-export { FieldStyle, Label, LabelText }
+const FieldStyle = styled.View``
+
+export { FieldStyle, Label, LabelText, FieldSet }

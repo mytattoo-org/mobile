@@ -1,22 +1,21 @@
-import { Button } from 'react-native'
+import { Button, View } from 'react-native'
 
 import { useSignIn } from './logic'
-import { SignInStyle, Form } from './styles'
+import { SignInStyle, Form, UsernameOrEmail, Password } from './styles'
 
 import User from '@components/atoms/icons/User'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
 
-import Field from '@components/organisms/Field'
-
 const SignIn = () => {
-  const { control, errors, onSubmit } = useSignIn()
+  const { control, errors, onSubmit, handleSubmit, getValues } = useSignIn()
 
   return (
     <WithKeyboard>
       <SignInStyle>
         <Form>
-          <Field
+          <UsernameOrEmail
+            getValues={getValues}
             label='Nome de usuário ou e-mail'
             error={errors.usernameOrEmail?.message}
             icon={{ component: User, props: { height: 24 } }}
@@ -29,7 +28,20 @@ const SignIn = () => {
             }}
           />
 
-          <Button onPress={onSubmit} title='Entrar' />
+          <Password
+            label='Senha'
+            getValues={getValues}
+            error={errors.password?.message}
+            icon={{ component: User, props: { height: 24 } }}
+            inputProps={{
+              textInputProps: { autoCapitalize: 'none' },
+              controllerProps: { control, name: 'password' }
+            }}
+          />
+
+          <View style={{ marginTop: 16 }}>
+            <Button onPress={handleSubmit(onSubmit)} title='Entrar' />
+          </View>
         </Form>
       </SignInStyle>
     </WithKeyboard>

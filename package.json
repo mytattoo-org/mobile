@@ -6,7 +6,8 @@
     "@types/react": "17.0.30"
   },
   "scripts": {
-    "dev": "expo start"
+    "dev": "expo start",
+    "devtool": "react-devtools"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.10",
@@ -43,6 +44,7 @@
     "eslint-plugin-react": "^7.30.0",
     "metro-react-native-babel-preset": "^0.71.0",
     "prettier": "^2.6.2",
+    "react-devtools": "^4.24.6",
     "typescript": "~4.3.5"
   }
 }

@@ -7,20 +7,20 @@ const useSignIn = () => {
   const {
     control,
     handleSubmit,
+    getValues,
     formState: { errors }
   } = useForm<FieldValues>({
+    mode: 'onBlur',
+    reValidateMode: 'onBlur',
     resolver: yupResolver(signInYupSchema),
-    defaultValues: {
-      usernameOrEmail: '',
-      password: ''
-    }
+    defaultValues: { usernameOrEmail: '', password: '' }
   })
 
-  const onSubmit = handleSubmit(data => {
+  const onSubmit = (data: any) => {
     console.log(data)
-  })
+  }
 
-  return { control, onSubmit, errors }
+  return { control, onSubmit, errors, handleSubmit, getValues }
 }
 
 export { useSignIn }

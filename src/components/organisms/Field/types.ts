@@ -1,4 +1,6 @@
 import { ComponentType } from 'react'
+import { FieldValues, UseFormGetValues } from 'react-hook-form'
+import { ViewStyle } from 'react-native'
 import { DefaultTheme } from 'styled-components/native'
 
 import { IIconProps } from '@components/atoms/icons/types'
@@ -19,28 +21,32 @@ interface ITextInputStyleProps {
   color: string
 }
 
-interface IUseInputParams {
-  icon: IFieldProps['icon']
-  inputProps: IFieldProps['inputProps']
-}
-
 interface ILabelTextProps {
   color: string
 }
 
-type TGetColors = (
-  theme: DefaultTheme,
+type TGetColors = (params: {
+  error: boolean
+  theme: DefaultTheme
   inputState: IInputState
-) => {
-  borderColor: string
-  labelColor: string
+}) => {
   textColor: string
   iconColor: string
+  labelColor: string
+  borderColor: string
+}
+
+interface IUseInputParams {
+  error: boolean
+  icon: IFieldProps['icon']
+  inputProps: IFieldProps['inputProps']
 }
 
 interface IFieldProps {
   error?: string
   label?: string
+  style?: ViewStyle
+  getValues: UseFormGetValues<FieldValues>
   inputProps: IInputProps
   icon?: {
     props: IIconProps
