@@ -9,7 +9,8 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
   const theme = useTheme()
   const [inputState, setInputState] = useState<IInputState>({
     isFilled: false,
-    isFocused: false
+    isFocused: false,
+    showPassword: false
   })
 
   const { iconColor, borderColor, labelColor, textColor } = getColors({
@@ -19,6 +20,11 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
   })
 
   const Icon = icon?.component
+  const showPassword = inputState.showPassword
+
+  const onEyeClick = () => {
+    setInputState(prev => ({ ...prev, showPassword: !prev.showPassword }))
+  }
 
   const onTextInputFocus: IInputProps['onTextInputFocus'] = event => {
     setInputState(prev => ({ ...prev, isFocused: true }))
@@ -26,10 +32,11 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
   }
 
   const onTextInputBlur = (event: any, getValues: any) => {
-    setInputState({
+    setInputState(prev => ({
+      ...prev,
       isFocused: false,
       isFilled: !!getValues()[inputProps.controllerProps.name]
-    })
+    }))
 
     inputProps?.onTextInputFocus && inputProps.onTextInputFocus(event)
   }
@@ -39,7 +46,9 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
     iconColor,
     textColor,
     labelColor,
+    onEyeClick,
     borderColor,
+    showPassword,
     onTextInputBlur,
     onTextInputFocus
   }

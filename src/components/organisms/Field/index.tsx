@@ -1,8 +1,12 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { useInput } from './logic'
 import { FieldStyle, LabelText, Label, FieldSet } from './styles'
 import type { IFieldProps } from './types'
+
+import ClosedEye from '@components/atoms/icons/ClosedEye'
+import Eye from '@components/atoms/icons/Eye'
 
 import Error from '@components/molecules/Error'
 import Input from '@components/molecules/Input'
@@ -13,14 +17,18 @@ const Field = ({
   style,
   error,
   getValues,
-  inputProps
+  inputProps,
+  isPassword = false,
+  passwordIconHeight = 24
 }: IFieldProps) => {
   const {
     Icon,
     textColor,
     iconColor,
     labelColor,
+    onEyeClick,
     borderColor,
+    showPassword,
     onTextInputBlur,
     onTextInputFocus
   } = useInput({ icon, inputProps, error: !!error })
@@ -44,9 +52,21 @@ const Field = ({
           controllerProps={inputProps.controllerProps}
           textInputProps={{
             style: { color: textColor },
+            secureTextEntry: showPassword,
             ...inputProps?.textInputProps
           }}
         />
+
+        {isPassword &&
+          (showPassword ? (
+            <TouchableOpacity onPress={onEyeClick}>
+              <Eye color={iconColor} height={passwordIconHeight} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={onEyeClick}>
+              <ClosedEye color={iconColor} height={passwordIconHeight} />
+            </TouchableOpacity>
+          ))}
       </FieldSet>
     </FieldStyle>
   )

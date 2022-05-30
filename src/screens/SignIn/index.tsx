@@ -29,13 +29,14 @@ const SignIn = () => {
           />
 
           <Password
+            isPassword
             label='Senha'
             getValues={getValues}
             error={errors.password?.message}
             icon={{ component: User, props: { height: 24 } }}
             inputProps={{
-              textInputProps: { autoCapitalize: 'none' },
-              controllerProps: { control, name: 'password' }
+              controllerProps: { control, name: 'password' },
+              textInputProps: { autoCapitalize: 'none' }
             }}
           />
 

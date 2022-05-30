@@ -10,6 +10,7 @@ import { IInputProps } from '@components/molecules/Input/types'
 interface IInputState {
   isFilled: boolean
   isFocused: boolean
+  showPassword: boolean
 }
 
 interface IInputStyleProps {
@@ -46,8 +47,10 @@ interface IFieldProps {
   error?: string
   label?: string
   style?: ViewStyle
-  getValues: UseFormGetValues<FieldValues>
+  isPassword?: boolean
   inputProps: IInputProps
+  passwordIconHeight?: number
+  getValues: UseFormGetValues<FieldValues>
   icon?: {
     props: IIconProps
     component?: ComponentType<IIconProps>
