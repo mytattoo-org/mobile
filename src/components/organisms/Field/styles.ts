@@ -1,7 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css } from 'styled-components/native'
 
-import { IInputStyleProps, ILabelTextProps } from './types'
+import { IFieldSetProps, ILabelTextProps } from './types'
 
 const LabelText = styled.Text<ILabelTextProps>`
   font-size: ${RFValue(16)}px;
@@ -20,7 +20,7 @@ const Label = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
 `
 
-const FieldSet = styled.View<IInputStyleProps>`
+const FieldSet = styled.View<IFieldSetProps>`
   position: relative;
 
   align-items: center;

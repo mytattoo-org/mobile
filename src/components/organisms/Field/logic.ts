@@ -1,44 +1,48 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import { useTheme } from 'styled-components'
 
-import type { IInputState, IUseInputParams, TGetColors } from './types'
+import type {
+  TGetColors,
+  IFieldState,
+  TFieldReducer,
+  IUseFieldParams,
+  TOnTextInputBlur,
+  TOnTextInputFocus
+} from './types'
 
-import { IInputProps } from '@components/molecules/Input/types'
-
-const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
+const useField = ({ icon, inputProps, error }: IUseFieldParams) => {
   const theme = useTheme()
-  const [inputState, setInputState] = useState<IInputState>({
-    isFilled: false,
-    isFocused: false,
-    showPassword: false
-  })
+  const [fieldState, dispatch] = useReducer(fieldReducer, initialState)
+
+  const Icon = icon?.component
+  const showPassword = fieldState.showPassword
 
   const { iconColor, borderColor, labelColor, textColor } = getColors({
     theme,
     error,
-    inputState
+    fieldState
   })
 
-  const Icon = icon?.component
-  const showPassword = inputState.showPassword
-
-  const onEyeClick = () => {
-    setInputState(prev => ({ ...prev, showPassword: !prev.showPassword }))
+  const onEyePress = () => {
+    dispatch({ type: 'eye' })
   }
 
-  const onTextInputFocus: IInputProps['onTextInputFocus'] = event => {
-    setInputState(prev => ({ ...prev, isFocused: true }))
-    inputProps?.onTextInputFocus && inputProps.onTextInputFocus(event)
+  const onTextInputFocus: TOnTextInputFocus = event => {
+    const { onTextInputFocus } = inputProps
+
+    dispatch({ type: 'focus' })
+    onTextInputFocus && onTextInputFocus(event)
   }
 
-  const onTextInputBlur = (event: any, getValues: any) => {
-    setInputState(prev => ({
-      ...prev,
-      isFocused: false,
-      isFilled: !!getValues()[inputProps.controllerProps.name]
-    }))
+  const onTextInputBlur: TOnTextInputBlur = (event, getValues) => {
+    const { onTextInputFocus } = inputProps
 
-    inputProps?.onTextInputFocus && inputProps.onTextInputFocus(event)
+    dispatch({
+      type: 'blur',
+      blur: { formValues: getValues(), name: inputProps.controllerProps.name }
+    })
+
+    onTextInputFocus && onTextInputFocus(event)
   }
 
   return {
@@ -46,7 +50,7 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
     iconColor,
     textColor,
     labelColor,
-    onEyeClick,
+    onEyePress,
     borderColor,
     showPassword,
     onTextInputBlur,
@@ -54,10 +58,42 @@ const useInput = ({ icon, inputProps, error }: IUseInputParams) => {
   }
 }
 
+const initialState: IFieldState = {
+  isFilled: false,
+  isFocused: false,
+  showPassword: false
+}
+
+const fieldReducer: TFieldReducer = (prevState, { type, blur }) => {
+  switch (type) {
+    case 'focus':
+      return { ...prevState, isFocused: true }
+
+    case 'blur': {
+      if (!blur) return prevState
+
+      const isFilled = blur.formValues[blur.name]
+
+      return {
+        isFilled,
+        isFocused: false,
+        showPassword: prevState.showPassword
+      }
+    }
+
+    case 'eye': {
+      return { ...prevState, showPassword: !prevState.showPassword }
+    }
+
+    default:
+      return prevState
+  }
+}
+
 const getColors: TGetColors = ({
   error,
   theme,
-  inputState: { isFilled, isFocused }
+  fieldState: { isFilled, isFocused }
 }) => {
   const filledColor = isFilled ? theme.colors.primary : theme.colors.secondary
   const focusedColor = isFocused ? theme.colors.primary : theme.colors.secondary
@@ -72,4 +108,4 @@ const getColors: TGetColors = ({
   return { textColor, labelColor, borderColor, iconColor }
 }
 
-export { useInput }
+export { useField }

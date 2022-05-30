@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-import { useInput } from './logic'
+import { useField } from './logic'
 import { FieldStyle, LabelText, Label, FieldSet } from './styles'
 import type { IFieldProps } from './types'
 
@@ -26,12 +26,12 @@ const Field = ({
     textColor,
     iconColor,
     labelColor,
-    onEyeClick,
+    onEyePress,
     borderColor,
     showPassword,
     onTextInputBlur,
     onTextInputFocus
-  } = useInput({ icon, inputProps, error: !!error })
+  } = useField({ icon, inputProps, error: !!error })
 
   return (
     <FieldStyle style={style}>
@@ -59,11 +59,11 @@ const Field = ({
 
         {isPassword &&
           (showPassword ? (
-            <TouchableOpacity onPress={onEyeClick}>
+            <TouchableOpacity onPress={onEyePress}>
               <Eye color={iconColor} height={passwordIconHeight} />
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={onEyeClick}>
+            <TouchableOpacity onPress={onEyePress}>
               <ClosedEye color={iconColor} height={passwordIconHeight} />
             </TouchableOpacity>
           ))}

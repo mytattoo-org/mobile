@@ -6,8 +6,8 @@ import { signInYupSchema } from './schemas'
 const useSignIn = () => {
   const {
     control,
-    handleSubmit,
     getValues,
+    handleSubmit,
     formState: { errors }
   } = useForm<FieldValues>({
     mode: 'onBlur',
