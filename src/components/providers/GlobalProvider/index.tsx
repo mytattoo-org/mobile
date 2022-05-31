@@ -1,15 +1,20 @@
+import { NavigationContainer } from '@react-navigation/native'
+import React from 'react'
+import { Provider as ReduxProvider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+
 import type { IGlobalProviderProps } from './types'
+
+import { store } from '@store/index'
 
 import theme from '@styles/theme'
 
-import { NavigationContainer } from '@react-navigation/native'
-import React from 'react'
-import { ThemeProvider } from 'styled-components'
-
 const GlobalProvider = ({ children }: IGlobalProviderProps) => (
-  <ThemeProvider theme={theme}>
-    <NavigationContainer>{children}</NavigationContainer>
-  </ThemeProvider>
+  <ReduxProvider store={store}>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>{children}</NavigationContainer>
+    </ThemeProvider>
+  </ReduxProvider>
 )
 
 export default GlobalProvider
