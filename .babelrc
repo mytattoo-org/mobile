@@ -5,19 +5,27 @@
       "module-resolver",
       {
         "alias": {
+          "@config": ["./src/config"],
+          "@assets": ["./assets"],
           "@hooks": ["./src/hooks"],
           "@store": ["./src/store"],
           "@tests": ["./src/tests"],
           "@types": ["./src/types"],
           "@utils": ["./src/utils"],
           "@routes": ["./src/routes"],
-          "@assets": ["./assets"],
           "@styles": ["./src/styles"],
           "@screens": ["./src/screens"],
           "@components": ["./src/components"],
           "@common": ["./submodules/common/src"]
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    [
+      "module:react-native-dotenv",
+      {
+        "path": ".env",
+        "moduleName": "react-native-dotenv"
       }
     ]
   ]

@@ -1,9 +1,10 @@
-import theme from "../styles/theme";
+/* eslint-disable @typescript-eslint/naming-convention */
+import 'styled-components'
 
-import "styled-components";
+import theme from '../styles/theme'
 
-type TTheme = typeof theme;
+type TTheme = typeof theme
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme extends TTheme {}
 }
