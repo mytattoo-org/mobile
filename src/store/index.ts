@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
+import devToolsEnhancer from 'remote-redux-devtools'
 
-import { userReducer } from './user'
+import { user } from './user'
 
 const store = configureStore({
-  reducer: {
-    userReducer: userReducer.reducer
-  }
+  reducer: { user: user.reducer },
+  enhancers: [devToolsEnhancer()]
 })
 
 export { store }

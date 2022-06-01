@@ -1,16 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import extraReducers from './extraReducers'
+import { IUserStore } from './types'
 
-const userReducer = createSlice({
-  initialState: { id: undefined, token: undefined },
+import signInExtraReducers from './extraReducers/signIn'
+
+import { TExtraReducers } from '@typescript/redux.types'
+
+const initialState: IUserStore = {
+  loading: false,
+  user: undefined
+}
+
+const extraReducers: TExtraReducers<IUserStore> = builder => {
+  signInExtraReducers(builder)
+}
+
+const user = createSlice({
   name: 'user',
+  reducers: {},
   extraReducers,
-  reducers: {
-    update: (state, { payload }) => {
-      state = payload
-    }
-  }
+  initialState
 })
 
-export { userReducer }
+export { user }

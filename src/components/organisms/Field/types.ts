@@ -44,7 +44,7 @@ interface IFieldProps {
   isPassword?: boolean
   inputProps: IInputProps
   passwordIconHeight?: number
-  getValues: UseFormGetValues<FieldValues>
+  getValues: UseFormGetValues<any>
   icon?: {
     props: IIconProps
     component?: ComponentType<IIconProps>

@@ -24,7 +24,7 @@
     "^@store",
     "^@styles",
     "^@tests",
-    "^@types",
+    "^@typescript",
     "^@utils",
     "^@routes",
     "^@assets",

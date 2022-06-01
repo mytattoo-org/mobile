@@ -20,12 +20,12 @@
       "@hooks/*": ["./src/hooks/*"],
       "@store/*": ["./src/store/*"],
       "@tests/*": ["./src/tests/*"],
-      "@types/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"],
       "@config/*": ["./src/config/*"],
       "@routes/*": ["./src/routes/*"],
       "@styles/*": ["./src/styles/*"],
       "@screens/*": ["./src/screens/*"],
+      "@typescript/*": ["src/typescript/*"],
       "@components/*": ["./src/components/*"],
       "@common/*": ["./submodules/common/src/*"]
     }

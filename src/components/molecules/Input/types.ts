@@ -7,7 +7,7 @@ interface IInputProps extends IInputStyleProps {
   textInputProps: TextInputProps
   onTextInputBlur?: TextInputProps['onBlur']
   onTextInputFocus?: TextInputProps['onFocus']
-  controllerProps: Omit<ControllerProps, 'render'>
+  controllerProps: Omit<ControllerProps<any>, 'render'>
 }
 
 export type { IInputProps, IInputStyleProps }

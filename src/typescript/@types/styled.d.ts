@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import 'styled-components'
 
-import theme from '../styles/theme'
+import theme from '../../styles/theme'
 
 type TTheme = typeof theme
 
