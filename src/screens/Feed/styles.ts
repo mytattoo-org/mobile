@@ -15,14 +15,18 @@ const Style = styled.SafeAreaView`
   ${androidPaddingSafeArea()}
 `
 
-const HeartButton = styled.TouchableOpacity``
+const HeartButton = styled.TouchableOpacity`
+  justify-content: center;
+`
 
 const BalloonButton = styled.TouchableOpacity`
   margin-left: 16px;
+  justify-content: center;
 `
 
 const TattooStylesButton = styled.TouchableOpacity`
   margin-left: auto;
+  justify-content: center;
 `
 
 const Footer = styled.View`

@@ -2,8 +2,8 @@ import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
 import { darken } from 'polished'
 import { useTheme } from 'styled-components'
 
-import FeedIcon from '@components/atoms/images/icons/Feed'
-import Tattoo from '@components/atoms/images/icons/Tattoo'
+import FeedIcon from '@components/atoms/svg/icons/Feed'
+import Tattoo from '@components/atoms/svg/icons/Tattoo'
 
 const useFeedTab = () => {
   const theme = useTheme()
@@ -20,9 +20,13 @@ const useFeedTab = () => {
     }
   }
 
-  const feedOptions: BottomTabNavigationOptions = { tabBarIcon: FeedIcon }
+  const feedOptions: BottomTabNavigationOptions = {
+    tabBarIcon: props => <FeedIcon height={28} {...props} />
+  }
 
-  const filtersOptions: BottomTabNavigationOptions = { tabBarIcon: Tattoo }
+  const filtersOptions: BottomTabNavigationOptions = {
+    tabBarIcon: props => <Tattoo height={38} {...props} />
+  }
 
   return { navigatorScreenOptions, feedOptions, filtersOptions }
 }

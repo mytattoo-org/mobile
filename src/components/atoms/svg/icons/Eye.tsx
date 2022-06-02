@@ -1,9 +1,11 @@
-import Svg, { Path } from 'react-native-svg'
+import { Path } from 'react-native-svg'
 
-import type { ISvgProps } from '../../types'
+import type { ISvgProps } from '../types'
 
-const Eye = ({ color, height = 28, ...props }: ISvgProps) => (
-  <Svg width={height + 6} height={height} viewBox='0 0 22 16' {...props}>
+import { SvgWrapper } from '@components/atoms/svg'
+
+const Eye = ({ color, ...props }: ISvgProps) => (
+  <SvgWrapper viewBox='0 0 22 16' {...props}>
     <Path
       stroke={color}
       strokeWidth='2'
@@ -19,7 +21,7 @@ const Eye = ({ color, height = 28, ...props }: ISvgProps) => (
       strokeLinejoin='round'
       d='M10.6128 11C12.2696 11 13.6128 9.65685 13.6128 8C13.6128 6.34315 12.2696 5 10.6128 5C8.95594 5 7.61279 6.34315 7.61279 8C7.61279 9.65685 8.95594 11 10.6128 11Z'
     />
-  </Svg>
+  </SvgWrapper>
 )
 
 export default Eye

@@ -1,3 +1,4 @@
+import { BaseThunkAPI } from '@reduxjs/toolkit/dist/createAsyncThunk'
 import { AxiosResponse } from 'axios'
 import { Alert } from 'react-native'
 

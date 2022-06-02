@@ -25,7 +25,7 @@ const SignInButton = styled(Button)`
 `
 
 const UsernameOrEmail = styled(Field)`
-  margin-top: 16px;
+  margin-top: 24px;
 `
 
 const Password = styled(Field)`

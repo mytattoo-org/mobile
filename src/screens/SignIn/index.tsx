@@ -10,8 +10,8 @@ import {
 } from './styles'
 
 import { Button } from '@components/atoms/Button'
-import { Logo } from '@components/atoms/images/Logo'
-import User from '@components/atoms/images/icons/User'
+import User from '@components/atoms/svg/icons/User'
+import { Logo } from '@components/atoms/svg/images/Logo'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
 
@@ -23,7 +23,7 @@ const SignIn = () => {
     <WithKeyboard>
       <SignInStyle>
         <Form>
-          <Logo color={theme.colors.primary} />
+          <Logo color={theme.colors.primary} height={120} />
 
           <UsernameOrEmail
             getValues={getValues}
@@ -43,6 +43,7 @@ const SignIn = () => {
             isPassword
             label='Senha'
             getValues={getValues}
+            passwordIconHeight={28}
             error={errors.password?.message}
             icon={{ component: User, props: { height: 24 } }}
             inputProps={{

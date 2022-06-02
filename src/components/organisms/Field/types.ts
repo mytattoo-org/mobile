@@ -8,7 +8,7 @@ import type {
 import type { TextInputProps } from 'react-native'
 import type { DefaultTheme } from 'styled-components/native'
 
-import type { IIconProps } from '@components/atoms/images/types'
+import type { IIconProps } from '@components/atoms/svg/types'
 
 import type { IInputProps } from '@components/molecules/Input/types'
 

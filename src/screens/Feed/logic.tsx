@@ -1,8 +1,8 @@
+import { useTheme } from 'styled-components'
+
 import avatar2 from '@assets/temp/avatar2.jpg'
 import avatar from '@assets/temp/avatar.png'
 import tattoo from '@assets/temp/tattoo.png'
-
-import { useTheme } from 'styled-components'
 
 interface IPost {
   id: string
@@ -52,4 +52,5 @@ const usePosts = () => {
 }
 
 export { usePosts }
+
 export type { IPost }

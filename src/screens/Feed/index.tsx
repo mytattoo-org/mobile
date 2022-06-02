@@ -16,9 +16,9 @@ import {
   TattooStylesButton
 } from './styles'
 
-import Balloon from '@components/atoms/images/icons/Balloon'
-import Heart from '@components/atoms/images/icons/Heart'
-import Tattoo from '@components/atoms/images/icons/Tattoo'
+import Balloon from '@components/atoms/svg/icons/Balloon'
+import Heart from '@components/atoms/svg/icons/Heart'
+import Tattoo from '@components/atoms/svg/icons/Tattoo'
 
 const Feed = () => {
   const { formattedPosts, theme } = usePosts()
@@ -46,15 +46,15 @@ const Feed = () => {
 
             <Footer>
               <HeartButton>
-                <Heart color={theme.colors.secondary} />
+                <Heart color={theme.colors.secondary} width={28} />
               </HeartButton>
 
               <BalloonButton>
-                <Balloon color={theme.colors.secondary} />
+                <Balloon color={theme.colors.secondary} width={28} />
               </BalloonButton>
 
               <TattooStylesButton>
-                <Tattoo color={theme.colors.secondary} />
+                <Tattoo color={theme.colors.secondary} width={28} />
               </TattooStylesButton>
             </Footer>
           </Post>
