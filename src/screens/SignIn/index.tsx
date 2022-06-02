@@ -1,8 +1,9 @@
-import { Button, View } from 'react-native'
+import { View } from 'react-native'
 
 import { useSignIn } from './logic'
 import { SignInStyle, Form, UsernameOrEmail, Password } from './styles'
 
+import { Button } from '@components/atoms/Button'
 import User from '@components/atoms/icons/User'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
