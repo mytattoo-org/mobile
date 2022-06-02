@@ -20,8 +20,6 @@ const signIn = async (data: ISignInRequest): Promise<IUserStore> => {
 
     const { id, token } = response.data
 
-    console.log('RESPONSE', response.data)
-
     if (id && token) {
       const response: AxiosResponse<TReadUsersResponse> = await api.get(
         `/users/${id}`
@@ -33,8 +31,8 @@ const signIn = async (data: ISignInRequest): Promise<IUserStore> => {
     }
   } catch (error: any) {
     error?.response?.data?.error
-      ? Alert.alert('Falha', error.response.data.error)
-      : Alert.alert('Falha', 'Error inesperado tente novamente mais tarde')
+      ? Alert.alert('Error', error.response.data.error)
+      : Alert.alert('Error', 'Error inesperado tente novamente mais tarde')
   }
 
   return {

@@ -7,13 +7,8 @@ import User from '@components/atoms/icons/User'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
 
-import useAppSelector from '@hooks/useAppSelector'
-
 const SignIn = () => {
   const { control, errors, onSubmit, handleSubmit, getValues } = useSignIn()
-
-  const user = useAppSelector(({ user }) => user)
-  console.log('USER-REDUX', user)
 
   return (
     <WithKeyboard>

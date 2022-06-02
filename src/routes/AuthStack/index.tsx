@@ -1,6 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 
+import { useAuthStack } from './logic'
+
 import SignIn from '@screens/SignIn'
 
 import { FeedTab } from '@routes/FeedTab'
@@ -8,7 +10,7 @@ import { FeedTab } from '@routes/FeedTab'
 const Stack = createStackNavigator()
 
 const AuthStack = () => {
-  const signedIn = false
+  const { signedIn } = useAuthStack()
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
