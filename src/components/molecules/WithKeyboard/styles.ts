@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 
 import { IWithKeyboardProps } from './types'
 
-import androidPaddingSafeArea from '@utils/androidPaddingSafeArea'
+import { androidPaddingSafeArea } from '@utils/androidPaddingSafeArea'
 
 const KeyboardAvoidingView = styled(OriginalKAV)`
   height: 100%;

@@ -1,8 +1,8 @@
-import androidPaddingSafeArea from '@utils/androidPaddingSafeArea'
-
 import { FlatList } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled from 'styled-components/native'
+
+import { androidPaddingSafeArea } from '@utils/androidPaddingSafeArea'
 
 const Style = styled.SafeAreaView`
   display: flex;

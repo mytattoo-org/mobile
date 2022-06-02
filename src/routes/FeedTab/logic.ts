@@ -1,9 +1,9 @@
-import FeedIcon from '@components/atoms/icons/Feed'
-import Tattoo from '@components/atoms/icons/Tattoo'
-
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
 import { darken } from 'polished'
 import { useTheme } from 'styled-components'
+
+import FeedIcon from '@components/atoms/images/icons/Feed'
+import Tattoo from '@components/atoms/images/icons/Tattoo'
 
 const useFeedTab = () => {
   const theme = useTheme()

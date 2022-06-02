@@ -7,4 +7,10 @@ const androidPaddingSafeArea = () =>
     padding-top: ${StatusBar.currentHeight}px;
   `
 
-export default androidPaddingSafeArea
+const androidOffsetBottom = () =>
+  Platform.OS === 'android' &&
+  css`
+    padding-bottom: ${StatusBar.currentHeight}px;
+  `
+
+export { androidPaddingSafeArea, androidOffsetBottom }

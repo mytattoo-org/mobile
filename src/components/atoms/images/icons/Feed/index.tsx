@@ -1,8 +1,8 @@
-import type { IIconProps } from '../types'
-
 import Svg, { Path } from 'react-native-svg'
 
-const Feed = ({ svgProps, color = 'white', height = 28 }: IIconProps) => (
+import type { ISvgProps } from '../../types'
+
+const Feed = ({ svgProps, color = 'white', height = 28 }: ISvgProps) => (
   <Svg width={height - 5} height={height} viewBox='0 0 17 22' {...svgProps}>
     <Path
       fill={color}

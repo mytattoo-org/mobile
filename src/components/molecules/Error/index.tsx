@@ -1,7 +1,7 @@
 import { ErrorStyle, Message } from './styles'
 import type { IErrorProps } from './types'
 
-import Alert from '@components/atoms/icons/Alert'
+import Alert from '@components/atoms/images/icons/Alert'
 
 const Error = ({ message }: IErrorProps) => {
   return (

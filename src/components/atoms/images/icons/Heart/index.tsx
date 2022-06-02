@@ -1,8 +1,8 @@
-import type { IIconProps } from '../types'
-
 import Svg, { Path } from 'react-native-svg'
 
-const Heart = ({ svgProps, color = 'white', height = 28 }: IIconProps) => (
+import type { ISvgProps } from '../../types'
+
+const Heart = ({ svgProps, color = 'white', height = 28 }: ISvgProps) => (
   <Svg width={height + 4} height={height} viewBox='0 0 31 27' {...svgProps}>
     <Path
       stroke={color}

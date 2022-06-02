@@ -1,8 +1,8 @@
-import type { IIconProps } from '../types'
-
 import Svg, { Path } from 'react-native-svg'
 
-const Balloon = ({ svgProps, color = 'white', height = 28 }: IIconProps) => (
+import type { ISvgProps } from '../../types'
+
+const Balloon = ({ svgProps, color = 'white', height = 28 }: ISvgProps) => (
   <Svg width={height + 2} height={height} viewBox='0 0 28 26' {...svgProps}>
     <Path
       fill={color}

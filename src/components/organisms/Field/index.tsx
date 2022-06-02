@@ -5,8 +5,8 @@ import { useField } from './logic'
 import { FieldStyle, LabelText, Label, FieldSet } from './styles'
 import type { IFieldProps } from './types'
 
-import ClosedEye from '@components/atoms/icons/ClosedEye'
-import Eye from '@components/atoms/icons/Eye'
+import ClosedEye from '@components/atoms/images/icons/ClosedEye'
+import Eye from '@components/atoms/images/icons/Eye'
 
 import Error from '@components/molecules/Error'
 import Input from '@components/molecules/Input'

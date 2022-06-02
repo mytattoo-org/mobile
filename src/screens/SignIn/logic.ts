@@ -1,5 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import { useTheme } from 'styled-components'
 
 import { ISignInValues } from './types'
 
@@ -10,6 +11,7 @@ import useAppDispatch from '@hooks/useAppDispatch'
 import { signInThunk } from '@store/user/extraReducers/signIn'
 
 const useSignIn = () => {
+  const theme = useTheme()
   const dispatch = useAppDispatch()
 
   const {
@@ -28,7 +30,7 @@ const useSignIn = () => {
     await dispatch(signInThunk(data))
   }
 
-  return { control, onSubmit, errors, handleSubmit, getValues }
+  return { control, onSubmit, errors, handleSubmit, getValues, theme }
 }
 
 export { useSignIn }

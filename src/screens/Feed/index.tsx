@@ -16,9 +16,9 @@ import {
   TattooStylesButton
 } from './styles'
 
-import Balloon from '@components/atoms/icons/Balloon'
-import Heart from '@components/atoms/icons/Heart'
-import Tattoo from '@components/atoms/icons/Tattoo'
+import Balloon from '@components/atoms/images/icons/Balloon'
+import Heart from '@components/atoms/images/icons/Heart'
+import Tattoo from '@components/atoms/images/icons/Tattoo'
 
 const Feed = () => {
   const { formattedPosts, theme } = usePosts()

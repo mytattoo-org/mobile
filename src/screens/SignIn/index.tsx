@@ -1,20 +1,30 @@
 import { View } from 'react-native'
 
 import { useSignIn } from './logic'
-import { SignInStyle, Form, UsernameOrEmail, Password } from './styles'
+import {
+  SignInStyle,
+  Form,
+  UsernameOrEmail,
+  Password,
+  SignInButton
+} from './styles'
 
 import { Button } from '@components/atoms/Button'
-import User from '@components/atoms/icons/User'
+import { Logo } from '@components/atoms/images/Logo'
+import User from '@components/atoms/images/icons/User'
 
 import WithKeyboard from '@components/molecules/WithKeyboard'
 
 const SignIn = () => {
-  const { control, errors, onSubmit, handleSubmit, getValues } = useSignIn()
+  const { control, errors, onSubmit, handleSubmit, getValues, theme } =
+    useSignIn()
 
   return (
     <WithKeyboard>
       <SignInStyle>
         <Form>
+          <Logo color={theme.colors.primary} />
+
           <UsernameOrEmail
             getValues={getValues}
             label='Nome de usuário ou e-mail'
@@ -41,9 +51,13 @@ const SignIn = () => {
             }}
           />
 
-          <View style={{ marginTop: 16 }}>
-            <Button onPress={handleSubmit(onSubmit)} title='Entrar' />
-          </View>
+          <SignInButton onPress={handleSubmit(onSubmit)} title='Entrar' />
+
+          <Button
+            type='secondary'
+            title='Cadastrar'
+            onPress={handleSubmit(onSubmit)}
+          />
         </Form>
       </SignInStyle>
     </WithKeyboard>

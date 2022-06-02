@@ -1,8 +1,8 @@
 import Svg, { Path } from 'react-native-svg'
 
-import type { IIconProps } from '../types'
+import type { ISvgProps } from '../../types'
 
-const Eye = ({ color, height = 28, ...props }: IIconProps) => (
+const Eye = ({ color, height = 28, ...props }: ISvgProps) => (
   <Svg width={height + 6} height={height} viewBox='0 0 22 16' {...props}>
     <Path
       stroke={color}

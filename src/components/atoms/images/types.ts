@@ -1,9 +1,9 @@
 import { SvgProps } from 'react-native-svg'
 
-interface IIconProps {
+interface ISvgProps {
   color?: string
   height?: number
   svgProps?: SvgProps
 }
 
-export type { IIconProps }
+export type { ISvgProps }
