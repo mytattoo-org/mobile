@@ -1,6 +1,6 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
 import { darken } from 'polished'
-import { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components/native'
 
 import FeedIcon from '@components/atoms/svg/icons/Feed'
 import Tattoo from '@components/atoms/svg/icons/Tattoo'

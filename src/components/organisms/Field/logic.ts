@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components/native'
 
 import type {
   TGetColors,

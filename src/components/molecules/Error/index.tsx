@@ -1,4 +1,4 @@
-import { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components/native'
 
 import { ErrorStyle, Message } from './styles'
 import type { IErrorProps } from './types'

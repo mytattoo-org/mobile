@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/native'
 
 import type { IGlobalProviderProps } from './types'
 

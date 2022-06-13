@@ -1,4 +1,4 @@
-import { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components/native'
 
 import avatar2 from '@assets/temp/avatar2.jpg'
 import avatar from '@assets/temp/avatar.png'

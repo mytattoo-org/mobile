@@ -1,5 +1,3 @@
-import { View } from 'react-native'
-
 import { useSignIn } from './logic'
 import {
   SignInStyle,
