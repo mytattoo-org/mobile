@@ -14,6 +14,7 @@ const jestConfig: Config.InitialOptions = {
     '<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push)'
   ],
   coverageDirectory: '<rootDir>/src/tests/jest/coverage',
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   // setupFilesAfterEnv: ['<rootDir>/src/tests/jest/jest.setup.ts'], for global config imports,
   testMatch: ['<rootDir>/src/**/*.spec.tsx', '<rootDir>/src/**/*.spec.ts'],
   coveragePathIgnorePatterns: [

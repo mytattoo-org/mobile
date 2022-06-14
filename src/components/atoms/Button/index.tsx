@@ -3,7 +3,9 @@ import type { IButtonProps } from './types'
 
 const Button = ({ title, type = 'primary', ...props }: IButtonProps) => (
   <ButtonStyle type={type} {...(props as any)}>
-    <Title type={type}>{title}</Title>
+    <Title accessibilityLabel='Button title' type={type}>
+      {title}
+    </Title>
   </ButtonStyle>
 )
 
