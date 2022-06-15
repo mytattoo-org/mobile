@@ -20,7 +20,7 @@ const SignIn = () => {
   return (
     <WithKeyboard>
       <SignInStyle>
-        <Form>
+        <Form accessibilityLabel='Sign in form'>
           <Logo color={theme.colors.primary} height={120} />
 
           <UsernameOrEmail
@@ -32,7 +32,8 @@ const SignIn = () => {
               controllerProps: { control, name: 'usernameOrEmail' },
               textInputProps: {
                 autoCapitalize: 'none',
-                keyboardType: 'email-address'
+                keyboardType: 'email-address',
+                accessibilityLabel: 'Username or e-mail'
               }
             }}
           />
@@ -46,11 +47,18 @@ const SignIn = () => {
             icon={{ component: User, props: { height: 24 } }}
             inputProps={{
               controllerProps: { control, name: 'password' },
-              textInputProps: { autoCapitalize: 'none' }
+              textInputProps: {
+                autoCapitalize: 'none',
+                accessibilityLabel: 'Password'
+              }
             }}
           />
 
-          <SignInButton onPress={handleSubmit(onSubmit)} title='Entrar' />
+          <SignInButton
+            title='Entrar'
+            onPress={handleSubmit(onSubmit)}
+            accessibilityLabel='Sign in button'
+          />
 
           <Button
             type='secondary'

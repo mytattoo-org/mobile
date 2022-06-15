@@ -10,13 +10,17 @@ const jestConfig: Config.InitialOptions = {
   moduleDirectories: ['node_modules', 'src'],
   modulePaths: ['node_modules', '<rootDir>'],
   coverageReporters: ['text-summary', 'lcov'],
-  transformIgnorePatterns: [
-    '<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push)'
-  ],
   coverageDirectory: '<rootDir>/src/tests/jest/coverage',
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
-  // setupFilesAfterEnv: ['<rootDir>/src/tests/jest/jest.setup.ts'], for global config imports,
-  testMatch: ['<rootDir>/src/**/*.spec.tsx', '<rootDir>/src/**/*.spec.ts'],
+  testMatch: ['<rootDir>/src/**/*spec.tsx', '<rootDir>/src/**/*spec.ts'],
+  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
+  setupFilesAfterEnv: [
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+    '@testing-library/jest-native/extend-expect',
+    '<rootDir>/src/tests/jest/jest.setup.js'
+  ],
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)'
+  ],
   coveragePathIgnorePatterns: [
     'styles.ts',
     '.types.ts',
@@ -24,7 +28,8 @@ const jestConfig: Config.InitialOptions = {
     '.stories.tsx',
     '<rootDir>/src/tests',
     '<rootDir>/src/styles',
-    '<rootDir>/src/components/atoms/Icon/icons'
+    '<rootDir>/src/typescript',
+    '<rootDir>/src/components/atoms/svg'
   ]
 }
 

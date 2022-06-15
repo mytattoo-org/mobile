@@ -14,7 +14,7 @@ const AuthStack = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {!signedIn ? (
+      {signedIn ? (
         <Stack.Screen name='feedTab' component={FeedTab} />
       ) : (
         <Stack.Screen name='signIn' component={SignIn} />

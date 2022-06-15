@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,21 +89,21 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,21 +113,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { TSvgProportion } from './types'
 &nbsp;
-const svgProportion: TSvgProportion = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> width, height, viewBox }) =&gt; {</span>
-  const splittedViewBox = <span class="cstat-no" title="statement not covered" >viewBox.split(' ').map(<span class="fstat-no" title="function not covered" >va</span>lue =&gt; <span class="cstat-no" title="statement not covered" >Number(value))</span></span>
-  const widthIsBiggest = <span class="cstat-no" title="statement not covered" >splittedViewBox[2] &gt; splittedViewBox[3]</span>
+const svgProportion: TSvgProportion = ({ width, height, viewBox }) =&gt; {
+  const splittedViewBox = viewBox.split(' ').map(value =&gt; Number(value))
+  const widthIsBiggest = splittedViewBox[2] &gt; splittedViewBox[3]
 &nbsp;
-  const proportion = <span class="cstat-no" title="statement not covered" >widthIsBiggest</span>
+  const proportion = widthIsBiggest
     ? splittedViewBox[2] / splittedViewBox[3]
     : splittedViewBox[3] / splittedViewBox[2]
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (width)</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (width)
 <span class="cstat-no" title="statement not covered" >    return widthIsBiggest</span>
       ? { width: width, height: width * proportion }
       : { width: width, height: width / proportion }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (height)</span>
-<span class="cstat-no" title="statement not covered" >    return !widthIsBiggest</span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (height)
+    return !widthIsBiggest
       ? { height: height, width: height * proportion }
       : { height: height, width: height / proportion }
 &nbsp;
@@ -142,7 +142,7 @@ export { svgProportion }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Jun 14 2022 00:22:22 GMT-0300 (Horário Padrão de Brasília)
+                at Wed Jun 15 2022 14:02:17 GMT-0300 (Horário Padrão de Brasília)
             </div>
         <script src="../../prettify.js"></script>
         <script>
